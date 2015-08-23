@@ -7,9 +7,22 @@
   ]);
 
   crossover
-    .config(['$routeProvider', function ($routeProvider) {
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-      $routeProvider.otherwise({redirectTo: '/'});
+      $locationProvider
+        .html5Mode(false)
+        .hashPrefix('!');
+
+      $routeProvider
+        .when('/', {
+          templateUrl: 'features/home/home.html',
+          controller: 'HomeCtrl',
+          controllerAs: 'home'
+        });
+
+      $routeProvider.otherwise({
+        redirectTo: '/'
+      });
 
     }]);
 

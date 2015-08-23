@@ -12,6 +12,7 @@
   <meta name="description" content="CROSS|OVER Trial Application">
   <meta name="author" content="Erhan Gundogan">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="fragment" content="!"/>
 
   <meta http-equiv="cache-control" content="max-age=0"/>
   <meta http-equiv="cache-control" content="no-cache"/>
@@ -21,11 +22,16 @@
 
   <!-- build:css public/css/app.min.css -->
   <link rel="stylesheet/less" type="text/css" href="public/less/main.less"/>
+  <link rel="stylesheet/less" type="text/css" href="features/home/home.less"/>
+  <link rel="stylesheet/less" type="text/css" href="features/list/list.less"/>
+  <link rel="stylesheet/less" type="text/css" href="features/list-item/list-item.less"/>
   <!-- /build -->
 
   <!-- build:css public/css/components.min.css -->
   <link rel="stylesheet" href="public/components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="public/components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/components/bootstrap/dist/css/bootstrap-theme.min.css">
   <!-- /build -->
 
   <script src="public/components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -36,6 +42,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <!-- ui-router can be used here on demand, it would be more professional -->
   <div ng-view></div>
 
   <!-- In production use:
@@ -59,6 +66,7 @@
   <!-- /build -->
 
   <!-- build:js lib.min.js -->
+  <script src="public/components/jquery/dist/jquery.js"></script>
   <script src="public/components/angular/angular.js"></script>
   <script src="public/components/angular-route/angular-route.js"></script>
   <script src="public/components/angular-loader/angular-loader.js"></script>
@@ -66,6 +74,13 @@
 
   <!-- build:js app.min.js -->
   <script src="app.js"></script>
+  <script src="services/dataService.js"></script>
+  <!-- /build -->
+
+  <!-- build:js features.min.js -->
+  <script src="features/home/home.js"></script>
+  <script src="features/list/list.js"></script>
+  <script src="features/list-item/list-item.js"></script>
   <!-- /build -->
 
 </body>
