@@ -1,4 +1,35 @@
 <ul class="list">
+
+  <div class="row">
+    <div class="list-header">
+      <div class="text-left col-xs-3 col-md-2">
+        <span>Changelist/Build</span>
+      </div>
+      <div class="col-xs-2 col-md-1">
+        <span>Owner</span>
+      </div>
+      <div class="col-xs-4 col-md-2">
+        <span>Time Started</span>
+      </div>
+      <div class="col-xs-3 col-md-1">
+        <span>State</span>
+      </div>
+
+      <div class="text-left col-xs-3 col-md-1">
+        <span>Metrics</span>
+      </div>
+      <div class="col-xs-2 col-md-1">
+        <span>Build</span>
+      </div>
+      <div class="col-xs-4 col-md-1">
+        <span>Unit Test</span>
+      </div>
+      <div class="col-xs-3 col-md-1">
+        <span>Functional Test</span>
+      </div>
+    </div>
+  </div>
+
   <li ng-repeat="taskItem in taskList.items track by $index">
     <div list-item data="taskItem"></div>
   </li>

@@ -1,3 +1,42 @@
-<ul class="list-items">
-  <li>{{ taskItem.data.id }}</li>
-</ul>
+<div class="list-items">
+
+  <div class="row">
+    <div class="list-item-info {{ taskItem.data.state }}">
+      <!-- mobile 1st line -->
+      <div class="list-item-first col-xs-3 col-md-2" ng-switch="taskItem.data.type">
+        <i class="flaticon-bricks" ng-switch-when="firewall"></i>
+        <i class="flaticon-pc" ng-switch-when="build"></i>
+        <span class="list-item-type" ng-bind="taskItem.data.id"></span>
+      </div>
+      <div class="list-item col-xs-2 col-md-1">
+        <span ng-bind="taskItem.data.owner"></span>&nbsp;
+      </div>
+      <div class="list-item col-xs-4 col-md-2">
+        <span ng-bind="taskItem.data.time | date:'MM/dd/yyyy hh:mma'"></span>
+      </div>
+      <div class="list-item col-xs-3 col-md-1">
+        <span ng-bind="taskItem.data.state | capitalize"></span>
+      </div>
+
+      <!-- mobile 2nd line -->
+      <div class="col-xs-3 col-md-1">
+        <div class="status-box {{ taskItem.data.metrics.state }}"></div>
+      </div>
+      <div class="list-item-box col-xs-2 col-md-1">
+        <div class="status-box {{ taskItem.data.build.state }}"></div>
+      </div>
+      <div class="list-item-box col-xs-4 col-md-1">
+        <div class="status-box {{ taskItem.data.unitTest.state }}"></div>
+      </div>
+      <div class="list-item-box col-xs-3 col-md-1">
+        <div class="status-box {{ taskItem.data.functionalTest.state }}"></div>
+      </div>
+    </div>
+
+    <div class="list-item-details" ng-if="taskItem.showDetails">
+      <div list-box data="taskItem.data"></div>
+    </div>
+
+  </div>
+
+</div>

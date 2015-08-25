@@ -4,7 +4,7 @@
     "id": 432459,
     "owner": "samy",
     "time": 1397662980000,
-    "state": "Accepted",
+    "state": "accepted",
     "metrics": {
       "test": 64,
       "testState": 1,
@@ -14,25 +14,25 @@
       "securityState": 0,
       "workmanship": 72,
       "workmanshipState": 0,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "build": {
       "debug": true,
       "release": true,
       "time": 1397748400000,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "unitTest": {
       "count": 152,
       "passed": 142,
       "coverage": 76,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "functionalTest": {
       "count": 4321,
       "passed": 2145,
       "coverage": 23,
-      "state": "Accepted"
+      "state": "accepted"
     }
   },
   {
@@ -40,7 +40,7 @@
     "id": 432461,
     "owner": "samy",
     "time": 1397768400000,
-    "state": "Rejected",
+    "state": "rejected",
     "metrics": {
       "test": 64,
       "testState": 1,
@@ -50,25 +50,25 @@
       "securityState": 0,
       "workmanship": 72,
       "workmanshipState": 0,
-      "state": "Rejected"
+      "state": "rejected"
     },
     "build": {
       "debug": true,
       "release": true,
       "time": 1397748400000,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "unitTest": {
       "count": 152,
       "passed": 142,
       "coverage": 76,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "functionalTest": {
       "count": 4321,
       "passed": 2145,
       "coverage": 23,
-      "state": "Accepted"
+      "state": "accepted"
     }
   },
   {
@@ -76,7 +76,7 @@
     "id": "Tenrox-R1 1234",
     "owner": null,
     "time": 1397662980000,
-    "state": "Complete",
+    "state": "complete",
     "metrics": {
       "test": 64,
       "testState": 1,
@@ -86,25 +86,25 @@
       "securityState": 0,
       "workmanship": 72,
       "workmanshipState": 0,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "build": {
       "debug": true,
       "release": true,
       "time": 1397748400000,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "unitTest": {
       "count": 152,
       "passed": 142,
       "coverage": 76,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "functionalTest": {
       "count": 4321,
       "passed": 2145,
       "coverage": 23,
-      "state": "Accepted"
+      "state": "accepted"
     }
   },
   {
@@ -112,26 +112,26 @@
     "id": "Tenrox-R1 1235",
     "owner": null,
     "time": null,
-    "state": "Pending"
+    "state": "pending"
   },
   {
     "type": "firewall",
     "id": 432462,
     "owner": "jtuck",
     "time": 1397662980000,
-    "state": "Running",
+    "state": "running",
     "metrics": {
       "progress": 53,
-      "state": "Running"
+      "state": "running"
     },
     "build": {
-      "state": "Pending"
+      "state": "pending"
     },
     "unitTest": {
-      "state": "Pending"
+      "state": "pending"
     },
     "functionalTest": {
-      "state": "Pending"
+      "state": "pending"
     }
   },
   {
@@ -139,7 +139,7 @@
     "id": 432461,
     "owner": "samy",
     "time": 1397710260000,
-    "state": "Rejected",
+    "state": "rejected",
     "metrics": {
       "test": 64,
       "testState": 1,
@@ -149,16 +149,16 @@
       "securityState": 0,
       "workmanship": 72,
       "workmanshipState": 0,
-      "state": "Rejected"
+      "state": "rejected"
     },
     "build": {
-      "state": "Pending"
+      "state": "pending"
     },
     "unitTest": {
-      "state": "Pending"
+      "state": "pending"
     },
     "functionalTest": {
-      "state": "Pending"
+      "state": "pending"
     }
   },
   {
@@ -166,7 +166,7 @@
     "id": 432485,
     "owner": "erhan",
     "time": 1439829910000,
-    "state": "Rejected",
+    "state": "rejected",
     "metrics": {
       "test": 194,
       "testState": 1,
@@ -176,25 +176,25 @@
       "securityState": 0,
       "workmanship": 92,
       "workmanshipState": 1,
-      "state": "Rejected"
+      "state": "rejected"
     },
     "build": {
       "debug": true,
       "release": false,
       "time": 1439829910000,
-      "state": "Accepted"
+      "state": "accepted"
     },
     "unitTest": {
       "count": 102,
       "passed": 33,
       "coverage": 18,
-      "state": "Rejected"
+      "state": "rejected"
     },
     "functionalTest": {
       "count": 2320,
       "passed": 321,
       "coverage": 15,
-      "state": "Rejected"
+      "state": "rejected"
     }
   }
 ]

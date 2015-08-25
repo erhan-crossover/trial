@@ -1,3 +1,23 @@
 .list {
   list-style: none;
+
+  .list-header {
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+
+    @media only screen and (min-width: 320px) and (max-width: 992px) {
+      font-size: 10px;
+    }
+
+    & > div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:last-child {
+        font-size: 11px;
+      }
+    }
+  }
+
 }
