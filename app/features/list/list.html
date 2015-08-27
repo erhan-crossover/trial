@@ -31,6 +31,6 @@
   </div>
 
   <li ng-repeat="taskItem in taskList.items track by $index">
-    <div list-item data="taskItem"></div>
+    <div list-item data="taskItem" item-index="$index"></div>
   </li>
 </ul>

@@ -1,0 +1,207 @@
+@import "/public/less/variables";
+
+.list-box {
+  display: block;
+  width: 100%;
+  padding: 5px;
+
+  li {
+    border-width: 2px;
+    border-style: solid;
+    background-color: white;
+    height: 150px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 2px;
+
+    &.unit-test-box, &.func-test-box {
+
+      .pie-chart {
+        float: left;
+        width: 65%;
+        max-width: 100%;
+        display: inline-block;
+
+        .unit-test-chart, .func-test-chart {
+          width: 120px;
+          height: 85px;
+        }
+      }
+
+      .percent-result {
+        font-size: 24px;
+        margin-top: 12px;
+
+        span {
+          font-size: 10px;
+          display: block;
+        }
+      }
+
+      .bar-chart {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: #000;
+        left: 10px;
+        height: 28px;
+        background-color: #f5cbb0;
+        right: 10px;
+        bottom: 3px;
+
+        .bar-text {
+          font-size: 16px;
+          line-height: 13px;
+          padding-top: 3px;
+          position: absolute;
+          width: 100%;
+
+          span {
+            font-size: 12px;
+            display: block;
+          }
+        }
+
+        .bar-fill {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          background-color: #c7deb7;
+        }
+      }
+    }
+
+    &:last-child {
+      width: 15%;
+      border: transparent;
+      background: transparent;
+    }
+
+    &.box {
+      width: 20%;
+      max-width: 20%;
+      box-sizing: border-box;
+      line-height: 20px;
+      position: relative;
+
+      &.description {
+        text-align: center;
+
+        .deploy-button, .find-issues-button {
+          padding: 5px;
+          background-color: @running;
+          color: white;
+        }
+
+        .success {
+          &:hover {
+            background-color: @complete;
+          }
+        }
+
+        .fail {
+          &:hover {
+            background-color: @rejected;
+          }
+        }
+
+      }
+
+      .build-text {
+        text-align: center;
+        font-size: 12px;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        color: #000;
+        width: 100%;
+      }
+
+      .debug, .release {
+        margin-top: 30px;
+        width: 50%;
+        text-align: center;
+        display: inline-block;
+        color: @running;
+
+        span {
+          display: block;
+          font-size: 12px;
+        }
+
+        i.flaticon-pc:before,
+        i.flaticon-pc:after {
+          font-size: 48px !important;
+        }
+      }
+    }
+
+    h4 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 0;
+    }
+
+    &.metrics-box {
+
+      .sub-box-container {
+        width: 50%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        height: 60px;
+
+        .sub-box-text {
+          color: black;
+          font-size: 12px;
+        }
+      }
+
+      .sub-box {
+        color: white !important;
+        line-height: 32px;
+      }
+
+      .up {
+        background: transparent url('/public/images/up-arrow.png') top center no-repeat;
+        background-size: contain;
+      }
+
+      .right {
+        background: transparent url('/public/images/right-arrow.png') top center no-repeat;
+        background-size: contain;
+      }
+
+      .down {
+        background: transparent url('/public/images/down-arrow.png') top center no-repeat;
+        background-size: contain;
+      }
+    }
+
+
+    &.complete, &.accepted {
+      border-color: @complete;
+      color: @complete;
+    }
+
+    &.running {
+      border-color: @running;
+      color: @running;
+    }
+
+    &.rejected {
+      border-color: @rejected;
+      color: @rejected;
+    }
+
+    &.pending {
+      border-color: @pending;
+      color: @pending;
+    }
+  }
+}

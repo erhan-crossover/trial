@@ -17,7 +17,7 @@
       "state": "accepted"
     },
     "build": {
-      "debug": true,
+      "debug": false,
       "release": true,
       "time": 1397748400000,
       "state": "accepted"

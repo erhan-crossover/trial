@@ -1,3 +1,124 @@
-<ul class="list-box">
-  <li></li>
-</ul>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-box">
+
+      <!-- metrics -->
+      <li class="metrics-box box {{ taskBox.data.metrics.state }}"
+          ng-hide="taskBox.data.metrics.state === 'pending' || taskBox.data.metrics.state === 'running'">
+        <h4>Metrics</h4>
+
+        <div class="sub-box-container">
+          <div class="sub-box"
+               ng-class="{ up:taskBox.data.metrics.testState === 1, right:taskBox.data.metrics.testState === 0, down:taskBox.data.metrics.testState === -1  }">
+            <span ng-bind="taskBox.data.metrics.test"></span>
+          </div>
+          <span class="sub-box-text">Test</span>
+        </div>
+
+        <div class="sub-box-container">
+          <div class="sub-box"
+               ng-class="{ up:taskBox.data.metrics.maintainabilityState === 1, right:taskBox.data.metrics.maintainabilityState === 0, down:taskBox.data.metrics.maintainabilityState === -1  }">
+            <span ng-bind="taskBox.data.metrics.test"></span>
+          </div>
+          <span class="sub-box-text">Maintainability</span>
+        </div>
+
+        <div class="sub-box-container">
+          <div class="sub-box"
+               ng-class="{ up:taskBox.data.metrics.securityState === 1, right:taskBox.data.metrics.securityState === 0, down:taskBox.data.metrics.securityState === -1  }">
+            <span ng-bind="taskBox.data.metrics.test"></span>
+          </div>
+          <span class="sub-box-text">Security</span>
+        </div>
+
+        <div class="sub-box-container">
+          <div class="sub-box"
+               ng-class="{ up:taskBox.data.metrics.workmanshipState === 1, right:taskBox.data.metrics.workmanshipState === 0, down:taskBox.data.metrics.workmanshipState === -1  }">
+            <span ng-bind="taskBox.data.metrics.test"></span>
+          </div>
+          <span class="sub-box-text">Workmanship</span>
+        </div>
+      </li>
+
+      <!-- build -->
+      <li class="build-box box {{ taskBox.data.build.state }}"
+          ng-hide="taskBox.data.build.state === 'pending' || taskBox.data.build.state === 'running'">
+        <h4>Build</h4>
+
+        <div class="debug" ng-show="taskBox.data.build.debug">
+          <i class="flaticon-pc"></i>
+          <span>Debug</span>
+        </div>
+        <div class="release" ng-show="taskBox.data.build.release">
+          <i class="flaticon-pc"></i>
+          <span>Release</span>
+        </div>
+        <div class="build-text">
+          <span ng-bind="taskBox.data.build.time | date:'h:mma - MM/dd/yyyy'"></span>
+        </div>
+      </li>
+
+      <!-- unit test -->
+      <li class="unit-test-box box {{ taskBox.data.unitTest.state }}"
+          ng-hide="taskBox.data.unitTest.state === 'pending' || taskBox.data.unitTest.state === 'running'">
+        <h4>Unit Test</h4>
+
+        <div class="pie-chart">
+          <!--<img src="https://chart.googleapis.com/chart?chl=142|10&cht=p&chd=t:20,80&chs=140x100&chco=d68c04,1b901b" alt=""/>-->
+          <div class="unit-test-chart"></div>
+
+        </div>
+        <div class="percent-result">
+          {{taskBox.data.unitTest.passed / taskBox.data.unitTest.count * 100 | number:0}}%
+          <span>tests passed</span></div>
+        <div class="bar-chart">
+          <div class="bar-fill" style="width: {{taskBox.data.unitTest.coverage}}%"></div>
+          <div class="bar-text">{{taskBox.data.unitTest.coverage}}%<span>code covered</span></div>
+        </div>
+      </li>
+
+      <!-- functional test -->
+      <li class="func-test-box box {{ taskBox.data.functionalTest.state }}"
+          ng-hide="taskBox.data.functionalTest.state === 'pending' || taskBox.data.functionalTest.state === 'running'">
+        <h4>Functional Test</h4>
+
+        <div class="pie-chart">
+          <!--<img src="https://chart.googleapis.com/chart?chp=5.5&chl=4321|2110&cht=p&chd=t:40,60&chs=140x100&chco=d68c04,1b901b" alt=""/>-->
+          <div class="func-test-chart"></div>
+
+        </div>
+        <div class="percent-result">
+          {{taskBox.data.functionalTest.passed / taskBox.data.functionalTest.count * 100 | number:0}}%
+          <span>tests passed</span></div>
+        <div class="bar-chart">
+          <div class="bar-fill" style="width: {{taskBox.data.functionalTest.coverage}}%"></div>
+          <div class="bar-text">{{taskBox.data.functionalTest.coverage}}%<span>code covered</span></div>
+        </div>
+      </li>
+
+      <li class="box description" ng-switch="taskBox.data.state">
+
+        <!-- Successive -->
+        <div class="success" ng-if="taskBox.data.state === 'accepted' || taskBox.data.state === 'completed'">
+          <span>Result</span>
+          <h3 ng-bind="taskBox.data.state | capitalize"></h3>
+          <input class="deploy-button" type="button" value="Deploy"/>
+          <span>to:</span>
+          <select name="deployment" id="deployment">
+            <option value="production">Production</option>
+          </select>
+        </div>
+
+        <!-- Fail -->
+        <div class="fail" ng-if="taskBox.data.state === 'rejected'">
+          <span>Result</span>
+          <br/>
+          <span>Change Rejected</span>
+          <h3 ng-bind="taskBox.getFailedTask()"></h3>
+          <input class="find-issues-button" type="button" value="Find Issues"/>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
